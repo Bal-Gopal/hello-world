@@ -7,6 +7,8 @@ A minimal repository that prints "Hello, world!".
 - **Application manifest**: [argocd/application.yaml](argocd/application.yaml)
 - **Kubernetes manifests**: [k8s/deployment.yaml](k8s/deployment.yaml), [k8s/service.yaml](k8s/service.yaml)
 
+- **Namespace manifest**: [k8s/namespace.yaml](k8s/namespace.yaml)
+
 To use this with Argo CD:
 
 1. Replace the `repoURL` in `argocd/application.yaml` with your repository URL (for example `https://github.com/your-user/hello-world`).
@@ -19,6 +21,8 @@ kubectl apply -f argocd/application.yaml -n argocd
 ```
 
 Argo CD will read the `k8s` path in the repository and deploy the `Deployment` and `Service` resources.
+
+Because the repository includes `k8s/namespace.yaml`, Argo CD will create the `hello-world` namespace before applying the app resources. The Application is configured to deploy into the `hello-world` namespace.
 
 Git push example:
 
