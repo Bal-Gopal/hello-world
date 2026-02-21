@@ -3,8 +3,10 @@ kind: Ingress
 metadata:
   name: hello-world-ingress
   namespace: hello-world
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
-  ingressClassName: traefik
   rules:
   - host: hello-world.local
     http:
