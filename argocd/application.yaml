@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/Bal-Gopal/hello-world.git"
     path: "k8s"
-    targetRevision: HEAD
+    targetRevision: master
   destination:
     server: "https://kubernetes.default.svc"
     namespace: hello-world
@@ -16,3 +16,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
