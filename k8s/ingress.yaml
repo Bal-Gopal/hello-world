@@ -4,7 +4,7 @@ metadata:
   name: hello-world-ingress
   namespace: hello-world
 spec:
-  ingressClassName: nginx
+  ingressClassName: treafik
   rules:
   - host: hello-world.local
     http:
