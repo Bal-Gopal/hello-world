@@ -15,4 +15,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: registry.lab/hello-world-web:tag
+        image: registry.lab/docker-hosted/hello-world-web:tag
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
